@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { getProductListRequest } from '../store/actions/productActions';
 import { AppState, Product } from '../types/stateTypes';
 import styled from 'styled-components/native';
+import ProductCard from '../components/ProductCard';
 
 interface HomeScreenProps {
   productList: Product[];
@@ -56,9 +57,7 @@ const HomeScreen: React.FC<HomeScreenProps> = ({
         <FlatList
           data={productList}
           renderItem={({ item }) => (
-            <ItemContainer>
-              <ItemText>{item.title}</ItemText>
-            </ItemContainer>
+            <ProductCard title={item.title} price={item.price} imageSource={item.images[0]} onPress={() => { console.log('pressed') }} />
           )}
           keyExtractor={(item) => item.id.toString()}
         />

@@ -13,7 +13,7 @@ instance.interceptors.request.use(
     async (config) => {
         config.headers.Accept = 'application/json';
         config.headers['Content-Type'] = 'application/json';
-        const token = StorageService.getItem('accessToken');
+        const token = StorageService.getItem('token');
         if (token) {
             config.headers.Authorization = `Bearer ${token}`;
         }
