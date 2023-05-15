@@ -85,7 +85,6 @@ export interface GenericTouchableOpacityPropTypes {
     maxWidth?: number;
     minHeight?: number;
     minWidth?: number;
-    paddingBottom?: number;
     paddingHorizontal?: number;
     paddingLeft?: number;
     paddingRight?: number;
