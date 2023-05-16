@@ -121,7 +121,7 @@ export default App; */
 
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import Navigator from './src/navigation/AppNavigator';
+import MainNavigator from './src/navigation/MainNavigator';
 import { Provider } from 'react-redux';
 import configureStore from './src/store/configureStore';
 
@@ -129,7 +129,7 @@ const App = () => {
   return (
     <Provider store={configureStore}>
       <NavigationContainer>
-        <Navigator />
+        <MainNavigator />
       </NavigationContainer>
     </Provider>
   );
