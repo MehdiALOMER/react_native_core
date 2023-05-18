@@ -1,5 +1,7 @@
 import { createStackNavigator } from '@react-navigation/stack';
-import TabNavigator from './TabNavigator';
+import BottomTabNavigator from './BottomTabNavigator';
+import MaterialTopTabNavigator from './MaterialTopTabNavigator';
+import MaterialBottomTabNavigator from './MaterialBottomTabNavigator';
 import DrawerNavigator from './DrawerNavigator';
 import LoginScreen from '../screens/LoginScreen';
 
@@ -7,8 +9,15 @@ const Stack = createStackNavigator();
 
 const MainNavigator = () => {
     return (
-        <Stack.Navigator>
-            <Stack.Screen name="Tabs" component={TabNavigator} />
+        <Stack.Navigator
+            initialRouteName="MainNavigator"
+            screenOptions={{
+                headerShown: false
+            }}
+        >
+            <Stack.Screen name="MaterialBottomTabNavigator" component={MaterialBottomTabNavigator} />
+            <Stack.Screen name="MaterialTopTabNavigator" component={MaterialTopTabNavigator} />
+            <Stack.Screen name="BottomTabNavigator" component={BottomTabNavigator} />
             <Stack.Screen name="Drawer" component={DrawerNavigator} />
             <Stack.Screen name="LoginScreen" component={LoginScreen} />
         </Stack.Navigator>

@@ -1,22 +1,25 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import Header from '../components/Header';
+import MyHeader from '../components/MyHeader';
 
-const ProfileScreen = () => {
-
-    const handleLogout = () => {
-        // Çıkış işlemleri
-    };
-
-    const handleDrawerOpen = () => {
-        // Drawer'ın açılmasını sağlayan kod
-    };
+const ProfileScreen = (navigation: any) => {
 
 
     return (
         <View>
-            <Header onLogout={handleLogout} onDrawerOpen={handleDrawerOpen} />
             {/* Diğer profile ekranı içeriği */}
+            <MyHeader
+                menu
+                onPressBack={() => navigation.goBack()}
+                title="Profile"
+                right="more-vertical"
+                onRightPress={() => console.log('right')}
+                rightComponent={
+                    <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                        <Text style={{ marginRight: 5 }}>Logout</Text>
+                    </View>
+                }
+            />
         </View>
     );
 };
